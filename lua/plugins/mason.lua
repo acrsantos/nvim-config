@@ -9,6 +9,7 @@ return {
       "js-debug-adapter",
       "json-lsp",
       "lua-language-server",
+      "rust-analyzer",
       "shfmt",
       "stylua",
       "tailwindcss-language-server",
