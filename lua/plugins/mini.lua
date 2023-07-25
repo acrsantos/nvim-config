@@ -44,6 +44,12 @@ return {
             end,
           }),
         },
+        open = {
+          enabled = false,
+        },
+        close = {
+          enabled = false,
+        },
       }
     end,
   },
