@@ -6,7 +6,6 @@ return {
       "clangd",
       "codelldb",
       "eslint-lsp",
-      "js-debug-adapter",
       "json-lsp",
       "lua-language-server",
       "rust-analyzer",
