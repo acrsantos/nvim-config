@@ -17,6 +17,14 @@ return {
     "echasnovski/mini.indentscope",
     enabled = false,
   },
+  {
+    "SmiteshP/nvim-navic",
+    enabled = false,
+  },
+  {
+    "folke/flash.nvim",
+    enabled = false,
+  },
   -- {
   --   "echasnovski/mini.animate",
   --   event = "VeryLazy",
