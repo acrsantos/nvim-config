@@ -22,6 +22,5 @@ vim.diagnostic.config({
 
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
-vim.g.nofsync = true
-
-vim.opt.shell = "pwsh.exe"
+-- vim.g.nofsync = true
+-- vim.opt.shell = "pwsh.exe"
