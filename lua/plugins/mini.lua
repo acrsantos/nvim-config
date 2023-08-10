@@ -19,7 +19,7 @@ return {
   },
   {
     "SmiteshP/nvim-navic",
-    enabled = false,
+    enabled = true,
   },
   {
     "folke/flash.nvim",

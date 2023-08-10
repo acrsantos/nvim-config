@@ -2,15 +2,15 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "tokyonight-night",
-      colorscheme = "rose-pine",
+      colorscheme = "tokyonight-night",
+      -- colorscheme = "rose-pine",
     },
   },
   {
     "folke/tokyonight.nvim",
     lazy = false,
     opts = {
-      transparent = true,
+      transparent = false,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
