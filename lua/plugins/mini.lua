@@ -14,8 +14,13 @@ return {
     },
   },
   {
+    "echasnovski/mini.indentscope",
+    enabled = false,
+  },
+  {
     "echasnovski/mini.animate",
     event = "VeryLazy",
+    enabled = false,
     opts = function()
       -- don't use animate when scrolling with the mouse
       local mouse_scrolled = false
@@ -46,5 +51,9 @@ return {
         },
       }
     end,
+  },
+  {
+    "SmiteshP/nvim-navic",
+    enabled = false,
   },
 }
