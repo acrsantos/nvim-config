@@ -20,5 +20,6 @@ vim.diagnostic.config({
   },
 })
 
+vim.opt.pumblend = 0
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
