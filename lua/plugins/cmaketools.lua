@@ -6,8 +6,11 @@ return {
       cmake_regenerate_on_save = true, -- auto generate when save CMakeLists.txt
       cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" }, -- this will be passed when invoke `CMakeGenerate`
       cmake_build_options = {}, -- this will be passed when invoke `CMakeBuild`
-      cmake_build_directory = "", -- this is used to specify generate directory for cmake
-      cmake_build_directory_prefix = "cmake_build_", -- when cmake_build_directory is set to "", this option will be activated
+      -- support macro expansion:
+      --       ${kit}
+      --       ${kitGenerator}
+      --       ${variant:xx}
+      cmake_build_directory = "out/${variant:buildType}", -- this is used to specify generate directory for cmake, allows macro expansion
       cmake_soft_link_compile_commands = true, -- this will automatically make a soft link from compile commands file to project root dir
       cmake_compile_commands_from_lsp = false, -- this will automatically set compile commands file location using lsp, to use it, please set `cmake_soft_link_compile_commands` to false
       cmake_kits_path = nil, -- this is used to specify global cmake kits path, see CMakeKits for detailed usage
@@ -54,7 +57,7 @@ return {
 
           -- Running Tasks
           start_insert_in_launch_task = true, -- If you want to enter terminal with :startinsert upon using :CMakeRun
-          start_insert_in_other_tasks = true, -- If you want to enter terminal with :startinsert upon launching all other cmake tasks in the terminal. Generally set as false
+          start_insert_in_other_tasks = false, -- If you want to enter terminal with :startinsert upon launching all other cmake tasks in the terminal. Generally set as false
           focus_on_main_terminal = true, -- Focus on cmake terminal when cmake task is launched. Only used if executor is terminal.
           focus_on_launch_terminal = true, -- Focus on cmake launch terminal when executable target in launched.
         },
