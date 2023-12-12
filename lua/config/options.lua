@@ -3,6 +3,8 @@
 -- Add any additional options here
 --
 
+vim.opt.expandtab = true
+
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
   border = "rounded",
 })
@@ -23,3 +25,7 @@ vim.diagnostic.config({
 vim.opt.pumblend = 0
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
