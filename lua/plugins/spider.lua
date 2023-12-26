@@ -6,6 +6,16 @@ return {
       "<cmd>lua require('spider').motion('e')<CR>",
       mode = { "n", "o", "x" },
     },
+    { -- example for lazy-loading on keystroke
+      "w",
+      "<cmd>lua require('spider').motion('w')<CR>",
+      mode = { "n", "o", "x" },
+    },
+    { -- example for lazy-loading on keystroke
+      "b",
+      "<cmd>lua require('spider').motion('b')<CR>",
+      mode = { "n", "o", "x" },
+    },
   },
   config = function()
     require("spider").setup({
