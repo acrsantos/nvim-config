@@ -5,20 +5,18 @@
 
 vim.opt.expandtab = true
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = "rounded",
-})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   -- Use a sharp border with `FloatBorder` highlights
-  border = "rounded",
+  border = "single",
   -- add the title in hover float window
   -- title = "hover",
 })
 
 vim.diagnostic.config({
   float = {
-    border = "rounded",
+    border = "single",
   },
 })
 

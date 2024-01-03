@@ -1,8 +1,9 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  -- enabled = false,
   opts = {
     window = {
-      position = "float",
+      position = "current",
       width = 30,
     },
     filesystem = {
