@@ -16,3 +16,5 @@
 --     l = { "<cmd>ObsidianLinkNew<cr>", "New Link" },
 --   },
 -- }, { prefix = "<leader>" })
+--
+vim.keymap.set("x", "<leader>p", [["_dP]])

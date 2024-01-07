@@ -1,30 +1,69 @@
 return {
-  -- {
-  --   "stevearc/overseer.nvim",
-  --   -- config = function()
-  --   --   require("overseer").setup()
-  --   -- end,
-  --   opts = {
-  --     form = {
-  --       win_opts = {
-  --         winblend = 0,
-  --         -- winhighlight = "NormalFloat:MyCustomHighlight",
-  --       },
-  --     },
-  --     confirm = {
-  --       win_opts = {
-  --         winblend = 0,
-  --         -- winhighlight = "NormalFloat:MyCustomHighlight",
-  --       },
-  --     },
-  --     task_win = {
-  --       win_opts = {
-  --         winblend = 0,
-  --         -- winhighlight = "NormalFloat:MyCustomHighlight",
-  --       },
-  --     },
-  --   },
-  -- },
+  -- Language Server
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "clang-format",
+        "clangd",
+        "codelldb",
+        "eslint-lsp",
+        "json-lsp",
+        "lua-language-server",
+        "rust-analyzer",
+        "shfmt",
+        "stylua",
+        "tailwindcss-language-server",
+        "typescript-language-server",
+      },
+    },
+  },
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "bash",
+        "c",
+        "cpp",
+        "html",
+        "javascript",
+        "json",
+        "json5",
+        "jsonc",
+        "lua",
+        "luadoc",
+        "luap",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "regex",
+        "rust",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "yaml",
+      },
+    },
+  },
+  -- Language Specific Tools
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      setup = {
+        rust_analyzer = function()
+          return true
+        end,
+      },
+    },
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^3", -- Recommended
+    ft = { "rust" },
+  },
   {
     "Civitasv/cmake-tools.nvim",
     ft = { "cpp" },
@@ -146,4 +185,30 @@ return {
       })
     end,
   },
+  -- {
+  --   "stevearc/overseer.nvim",
+  --   -- config = function()
+  --   --   require("overseer").setup()
+  --   -- end,
+  --   opts = {
+  --     form = {
+  --       win_opts = {
+  --         winblend = 0,
+  --         -- winhighlight = "NormalFloat:MyCustomHighlight",
+  --       },
+  --     },
+  --     confirm = {
+  --       win_opts = {
+  --         winblend = 0,
+  --         -- winhighlight = "NormalFloat:MyCustomHighlight",
+  --       },
+  --     },
+  --     task_win = {
+  --       win_opts = {
+  --         winblend = 0,
+  --         -- winhighlight = "NormalFloat:MyCustomHighlight",
+  --       },
+  --     },
+  --   },
+  -- },
 }

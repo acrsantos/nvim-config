@@ -4,14 +4,12 @@
 
 local wk = require("which-key")
 wk.register({
-  a = {
-    name = "cmaketools",
-    r = { "<cmd>CMakeRun<cr>", "CMake Run" },
-    s = { "<cmd>CMakeSelectBuildType<cr>", "CMake Select Build Type" },
+  c = {
+    c = { "<cmd>CMakeRun<cr>", "CMake Run" },
+    t = { "<cmd>CMakeSelectBuildType<cr>", "CMake Select Build Type" },
     g = { "<cmd>CMakeGenerate<cr>", "CMake Generate" },
     b = { "<cmd>CMakeBuild<cr>", "CMake Build" },
-    d = { "<cmd>CMakeDebug<cr>", "CMake Debug" },
-    c = { "<cmd>CMakeClean<cr>", "CMake Clean" },
+    D = { "<cmd>CMakeDebug<cr>", "CMake Debug" },
     i = { "<cmd>CMakeInstall<cr>", "CMake Install" },
   },
 }, { prefix = "<leader>" })
