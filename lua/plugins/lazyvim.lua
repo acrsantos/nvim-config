@@ -1,5 +1,9 @@
 return {
   "j-hui/fidget.nvim",
+  {
+    "folke/noice.nvim",
+    enabled = false,
+  },
 
   {
     "nvim-neo-tree/neo-tree.nvim",
