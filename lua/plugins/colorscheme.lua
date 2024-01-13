@@ -15,7 +15,7 @@ return {
         -- or leave it empty to use the default settings
         style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
         light_style = "day", -- The theme is used when the background is set to light
-        transparent = true, -- Enable this to disable setting the background color
+        transparent = false, -- Enable this to disable setting the background color
         terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
         styles = {
           -- Style to be applied to different syntax groups
@@ -25,8 +25,8 @@ return {
           functions = {},
           variables = {},
           -- Background styles. Can be "dark", "transparent" or "normal"
-          sidebars = "transparent", -- style for sidebars, see below
-          floats = "transparent", -- style for floating windows
+          sidebars = "dark", -- style for sidebars, see below
+          floats = "dark", -- style for floating windows
         },
         sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
         day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
@@ -53,31 +53,37 @@ return {
     lazy = true,
     config = function()
       require("rose-pine").setup({
-        --- @usage 'auto'|'main'|'moon'|'dawn'
-        variant = "auto",
-        --- @usage 'main'|'moon'|'dawn'
-        dark_variant = "main",
-        bold_vert_split = false,
-        dim_nc_background = false,
-        disable_background = true,
-        disable_float_background = true,
-        disable_italics = true,
+        variant = "auto", -- auto, main, moon, or dawn
+        dark_variant = "main", -- main, moon, or dawn
+        dim_inactive_windows = false,
+        extend_background_behind_borders = true,
 
-        --- @usage string hex value or named color from rosepinetheme.com/palette
+        styles = {
+          bold = true,
+          italic = true,
+          transparency = true,
+        },
+
         groups = {
-          background = "base",
-          background_nc = "_experimental_nc",
-          panel = "surface",
-          panel_nc = "base",
-          border = "highlight_med",
-          comment = "muted",
+          border = "muted",
           link = "iris",
-          punctuation = "subtle",
+          panel = "surface",
 
           error = "love",
           hint = "iris",
           info = "foam",
           warn = "gold",
+
+          git_add = "foam",
+          git_change = "rose",
+          git_delete = "love",
+          git_dirty = "rose",
+          git_ignore = "muted",
+          git_merge = "iris",
+          git_rename = "pine",
+          git_stage = "iris",
+          git_text = "rose",
+          git_untracked = "subtle",
 
           headings = {
             h1 = "iris",
@@ -87,23 +93,23 @@ return {
             h5 = "pine",
             h6 = "foam",
           },
-          -- or set all headings at once
-          -- headings = 'subtle'
+          -- Alternatively, set all headings at once.
+          -- headings = "subtle",
         },
 
         -- Change specific vim highlight groups
         -- https://github.com/rose-pine/neovim/wiki/Recipes
         highlight_groups = {
-          ColorColumn = { bg = "rose" },
-
-          -- Blend colours against the "base" background
-          CursorLine = { bg = "foam", blend = 10 },
-          StatusLine = { fg = "love", bg = "love", blend = 10 },
-
-          -- By default each group adds to the existing config.
-          -- If you only want to set what is written in this config exactly,
-          -- you can set the inherit option:
-          Search = { bg = "gold", inherit = false },
+          -- ColorColumn = { bg = "rose" },
+          --
+          -- -- Blend colours against the "base" background
+          -- CursorLine = { bg = "foam", blend = 10 },
+          -- StatusLine = { fg = "love", bg = "love", blend = 10 },
+          --
+          -- -- By default each group adds to the existing config.
+          -- -- If you only want to set what is written in this config exactly,
+          -- -- you can set the inherit option:
+          -- Search = { bg = "gold", inherit = false },
         },
       })
 

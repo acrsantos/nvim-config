@@ -4,6 +4,19 @@ return {
     "folke/noice.nvim",
     enabled = false,
   },
+  {
+    "jinh0/eyeliner.nvim",
+    config = function()
+      require("eyeliner").setup({
+        highlight_on_key = true, -- show highlights only after keypress
+        dim = false, -- dim all other characters if set to true (recommended!)
+      })
+    end,
+  },
+  {
+    "sindrets/diffview.nvim",
+    lazy = true,
+  },
 
   {
     "nvim-neo-tree/neo-tree.nvim",
