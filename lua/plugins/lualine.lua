@@ -154,9 +154,9 @@ return {
           },
         },
         lualine_z = {
-          function()
-            return "  " .. os.date("%X")
-          end,
+          -- function()
+          --   return "  " .. os.date("%X")
+          -- end,
         },
       },
       extensions = { "neo-tree", "lazy" },
