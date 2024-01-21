@@ -1,4 +1,11 @@
 return {
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = true },
+    },
+  },
+
   -- Language Server
   {
     "williamboman/mason.nvim",

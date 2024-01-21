@@ -5,6 +5,12 @@ return {
     enabled = false,
   },
   {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {}, -- this is equalent to setup({}) function
+  },
+  { "MunifTanjim/nui.nvim", enabled = true },
+  {
     "jinh0/eyeliner.nvim",
     config = function()
       require("eyeliner").setup({

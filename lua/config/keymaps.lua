@@ -16,7 +16,14 @@
 --     l = { "<cmd>ObsidianLinkNew<cr>", "New Link" },
 --   },
 -- }, { prefix = "<leader>" })
---
+
 vim.keymap.set("x", "<leader>p", [["_dP]])
--- vim.keymap.set("n", "<C-u>", "<C-u>zz")
--- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.del("n", "<C-_>")
+
+local opts = { silent = true, remap = true }
+vim.keymap.set("o", "<C-_>", "gc", opts)
+vim.keymap.set("x", "<C-_>", "gc", opts)
+vim.keymap.set("v", "<C-_>", "gc", opts)
+vim.keymap.set("n", "<C-_>", "gcc", opts)
