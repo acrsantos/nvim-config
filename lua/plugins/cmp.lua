@@ -1,8 +1,8 @@
 return {
-  -- {
-  --   -- LSP kind
-  --   "onsails/lspkind.nvim",
-  -- },
+  {
+    -- LSP kind
+    "onsails/lspkind.nvim",
+  },
   {
     "L3MON4D3/LuaSnip",
     keys = function()
@@ -31,6 +31,7 @@ return {
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
+      local lspkind = require("lspkind")
       return {
         completion = {
           -- autocomplete = true,
@@ -71,14 +72,29 @@ return {
         }),
         formatting = {
           fields = { "abbr", "kind", "menu" },
-          format = function(entry, item)
-            local icons = require("lazyvim.config").icons.kinds
-            if icons[item.kind] then
-              item.kind = icons[item.kind] .. item.kind
-            end
-            item.menu = icons[entry.source.name]
-            return item
-          end,
+          -- format = function(entry, item)
+          --   local icons = require("lazyvim.config").icons.kinds
+          --   if icons[item.kind] then
+          --     item.kind = icons[item.kind] .. item.kind
+          --   end
+          --   item.menu = nil
+          --   return item
+
+          format = lspkind.cmp_format({
+            -- mode = "symbol", -- show only symbol annotations
+            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            -- can also be a function to dynamically calculate max width such as
+            -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+            ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+            show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+
+            -- The function below will be called before any actual modifications from lspkind
+            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+            before = function(entry, vim_item)
+              vim_item.menu = nil
+              return vim_item
+            end,
+          }),
         },
         experimental = {
           -- ghost_text = {
@@ -103,7 +119,7 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
-      local has_words_before = function()
+      local has_wordsrbefore = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
