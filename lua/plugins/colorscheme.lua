@@ -3,8 +3,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "default",
-      -- colorscheme = "tokyonight",
-      colorscheme = "rose-pine",
+      colorscheme = "tokyonight",
+      -- colorscheme = "rose-pine",
     },
   },
   {
@@ -16,13 +16,13 @@ return {
         -- or leave it empty to use the default settings
         style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
         light_style = "day", -- The theme is used when the background is set to light
-        transparent = false, -- Enable this to disable setting the background color
+        transparent = true, -- Enable this to disable setting the background color
         terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
         styles = {
           -- Style to be applied to different syntax groups
           -- Value is any valid attr-list value for `:help nvim_set_hl`
           comments = { italic = true },
-          keywords = { italic = true },
+          keywords = { italic = false },
           functions = {},
           variables = {},
           -- Background styles. Can be "dark", "transparent" or "normal"
@@ -33,7 +33,7 @@ return {
         day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
         hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
         dim_inactive = false, -- dims inactive windows
-        lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+        lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
 
         --- You can override specific color groups to use other groups or a hex color
         --- function will be called with a ColorScheme table
@@ -56,12 +56,18 @@ return {
       require("rose-pine").setup({
         variant = "auto", -- auto, main, moon, or dawn
         dark_variant = "main", -- main, moon, or dawn
-        dim_inactive_windows = false,
+        dim_inactive_windows = true,
         extend_background_behind_borders = true,
+
+        enable = {
+          terminal = true,
+          legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+          migrations = true, -- Handle deprecated options automatically
+        },
 
         styles = {
           bold = true,
-          italic = true,
+          italic = false,
           transparency = true,
         },
 
@@ -73,6 +79,8 @@ return {
           error = "love",
           hint = "iris",
           info = "foam",
+          note = "pine",
+          todo = "rose",
           warn = "gold",
 
           git_add = "foam",
@@ -86,33 +94,36 @@ return {
           git_text = "rose",
           git_untracked = "subtle",
 
-          headings = {
-            h1 = "iris",
-            h2 = "foam",
-            h3 = "rose",
-            h4 = "gold",
-            h5 = "pine",
-            h6 = "foam",
-          },
-          -- Alternatively, set all headings at once.
-          -- headings = "subtle",
+          h1 = "iris",
+          h2 = "foam",
+          h3 = "rose",
+          h4 = "gold",
+          h5 = "pine",
+          h6 = "foam",
         },
 
-        -- Change specific vim highlight groups
-        -- https://github.com/rose-pine/neovim/wiki/Recipes
         highlight_groups = {
-          -- ColorColumn = { bg = "rose" },
-          --
-          -- -- Blend colours against the "base" background
-          -- CursorLine = { bg = "foam", blend = 10 },
-          -- StatusLine = { fg = "love", bg = "love", blend = 10 },
-          --
-          -- -- By default each group adds to the existing config.
-          -- -- If you only want to set what is written in this config exactly,
-          -- -- you can set the inherit option:
-          -- Search = { bg = "gold", inherit = false },
+          -- Comment = { fg = "foam" },
+          -- VertSplit = { fg = "muted", bg = "muted" },
         },
+
+        before_highlight = function(group, highlight, palette)
+          -- Disable all undercurls
+          -- if highlight.undercurl then
+          --     highlight.undercurl = false
+          -- end
+          --
+          -- Change palette colour
+          -- if highlight.fg == palette.pine then
+          --     highlight.fg = palette.foam
+          -- end
+        end,
       })
+
+      vim.cmd("colorscheme rose-pine")
+      -- vim.cmd("colorscheme rose-pine-main")
+      -- vim.cmd("colorscheme rose-pine-moon")
+      -- vim.cmd("colorscheme rose-pine-dawn")
 
       -- Set colorscheme after options
       -- vim.cmd("colorscheme rose-pine")

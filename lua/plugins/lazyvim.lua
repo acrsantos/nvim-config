@@ -35,7 +35,7 @@ return {
     -- enabled = false,
     opts = {
       window = {
-        position = "current",
+        position = "left",
         width = 30,
       },
       filesystem = {
