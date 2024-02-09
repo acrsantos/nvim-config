@@ -1,5 +1,11 @@
 return {
-  "j-hui/fidget.nvim",
+  {
+    "j-hui/fidget.nvim",
+    ft = { "rust", "lua" },
+    config = function()
+      require("fidget").setup()
+    end,
+  },
   {
     "folke/noice.nvim",
     enabled = false,
