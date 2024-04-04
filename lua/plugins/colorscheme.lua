@@ -3,7 +3,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "default",
-      colorscheme = "tokyonight",
+      -- colorscheme = "tokyonight",
+      colorscheme = "solarized",
       -- colorscheme = "rose-pine",
     },
   },
@@ -125,6 +126,66 @@ return {
 
       -- Set colorscheme after options
       -- vim.cmd("colorscheme rose-pine")
+    end,
+  },
+  {
+    "maxmx03/solarized.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.background = "dark" -- or 'light'
+      require("solarized").setup({
+        transparent = true, -- enable transparent background
+        palette = "solarized", -- or selenized
+        styles = {
+          comments = {},
+          functions = {},
+          variables = {},
+          numbers = {},
+          constants = {},
+          parameters = {},
+          keywords = {},
+          types = {},
+        },
+        enables = {
+          bufferline = true,
+          cmp = true,
+          diagnostic = true,
+          dashboard = true,
+          editor = true,
+          gitsign = true,
+          hop = true,
+          indentblankline = true,
+          lsp = true,
+          lspsaga = true,
+          navic = true,
+          neogit = true,
+          neotree = true,
+          notify = true,
+          noice = true,
+          semantic = true,
+          syntax = true,
+          telescope = true,
+          tree = true,
+          treesitter = true,
+          todo = true,
+          whichkey = true,
+          mini = true,
+        },
+        highlights = function(colors, colorhelper)
+          local darken = colorhelper.darken
+          local lighten = colorhelper.lighten
+          local blend = colorhelper.blend
+
+          return {
+            NeoTreeNormal = { fg = colors.base0, bg = "NONE" },
+          }
+        end,
+        colors = {},
+        theme = "default", -- or 'neo'
+        autocmd = true,
+      })
+      vim.cmd.colorscheme("solarized")
     end,
   },
 }

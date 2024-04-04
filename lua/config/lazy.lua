@@ -48,4 +48,4 @@ require("lazy").setup({
     },
   },
 })
-vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#4f4f4f", bg = "#14161b" })
+vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#4f4f4f", bg = "NONE" })

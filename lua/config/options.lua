@@ -13,6 +13,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- lua/config/options.lua
+
 vim.o.guifont = "JetBrainsMono NF:h09"
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
@@ -37,6 +39,7 @@ vim.diagnostic.config({
   },
 })
 
+vim.g.html_number_lines = 1
 vim.api.nvim_create_user_command("RichTextCopy", function(args)
   local saved_html_use_css = vim.g.html_use_css
   local saved_html_no_progress = vim.g.html_no_progress
@@ -48,10 +51,16 @@ vim.api.nvim_create_user_command("RichTextCopy", function(args)
   })
   vim.g.html_use_css = saved_html_use_css
   vim.g.html_no_progress = saved_html_no_progress
-  vim.g.html_number_lines = 0
+  vim.g.html_number_lines = false
 
-  vim.cmd("w !xclip -selection clipboard -t text/html -i")
+  vim.cmd("w !wl-copy -t text/html ")
   vim.cmd.bwipeout({ bang = true })
 end, {
   range = "%",
 })
+
+vim.opt.listchars = {
+  tab = "  ",
+  trail = " ",
+  nbsp = "+",
+}
