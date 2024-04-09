@@ -179,6 +179,7 @@ return {
 
           return {
             NeoTreeNormal = { fg = colors.base0, bg = "NONE" },
+            NormalFloat = { fg = "#839496", bg = "NONE" }
           }
         end,
         colors = {},

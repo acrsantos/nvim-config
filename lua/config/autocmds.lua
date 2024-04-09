@@ -3,7 +3,7 @@
 -- Add any additional autocmds here
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c", "cpp", "html", "css" },
+  pattern = { "c", "cpp", "html", "css", "*" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -46,3 +46,4 @@ vim.api.nvim_create_autocmd("CursorMovedI", {
     end
   end,
 })
+
