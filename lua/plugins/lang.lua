@@ -1,10 +1,5 @@
 return {
   {
-    "mrcjkb/rustaceanvim",
-    version = "^3", -- Recommended
-    ft = { "rust" },
-  },
-  {
     'Civitasv/cmake-tools.nvim',
     ft = { 'cpp' },
     opts = {
@@ -80,14 +75,6 @@ return {
         spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }, -- icons used for progress display
         refresh_rate_ms = 100, -- how often to iterate icons
       },
-    },
-    keys = {
-      { '<leader>cc', '<cmd>CMakeRun<cr>', mode = { 'n', 'o', 'x' }, desc = 'CMake Run' },
-      { '<leader>ct', '<cmd>CMakeSelectBuildType<cr>', mode = { 'n', 'o', 'x' }, desc = 'CMake Select Build Type' },
-      { '<leader>cg', '<cmd>CMakeGenerate<cr>', mode = { 'n', 'o', 'x' }, desc = 'CMake Generate' },
-      { '<leader>cb', '<cmd>CMakeBuild<cr>', mode = { 'n', 'o', 'x' }, desc = 'CMake Build' },
-      { '<leader>cD', '<cmd>CMakeDebug<cr>', mode = { 'n', 'o', 'x' }, desc = 'CMake Debug' },
-      { '<leader>ci', '<cmd>CMakeInstall<cr>', mode = { 'n', 'o', 'x' }, desc = 'CMake Install' },
     },
   },
 }
