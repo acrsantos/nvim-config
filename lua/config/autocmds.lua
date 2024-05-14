@@ -47,6 +47,16 @@ vim.api.nvim_create_autocmd("CursorMovedI", {
   end,
 })
 
+local group = vim.api.nvim_create_augroup("TermBufNoLineNumbers", { clear = true })
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = group,
+  pattern = "*",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+  end,
+})
+
 -- Hide cmd line
 -- vim.opt.cmdheight = 0
 --

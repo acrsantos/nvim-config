@@ -1,6 +1,7 @@
 return {
   {
-    'Civitasv/cmake-tools.nvim',
+    -- 'Civitasv/cmake-tools.nvim',
+    dir = "~/dev/cmake-tools.nvim/",
     ft = { 'cpp' },
     opts = {
       cmake_build_options = {}, -- this will be passed when invoke `CMakeBuild`
@@ -75,6 +76,8 @@ return {
         spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }, -- icons used for progress display
         refresh_rate_ms = 100, -- how often to iterate icons
       },
+
+      cmake_virtual_text_support = false
     },
   },
 }

@@ -39,3 +39,5 @@ vim.diagnostic.config({
     border = "single",
   },
 })
+
+vim.opt.termsync = false
