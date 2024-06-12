@@ -25,6 +25,21 @@ return {
         },
         lualine_x = {
           {
+            "diff",
+            padding = { left = 0, right = 1 },
+            colored = true,
+            -- diff_color = {
+            --   added = { fg = "#16181d", bg = "#f6f8ff" },
+            --   modified = { fg = "#16181d", bg = "#f6f8ff" },
+            --   removed = { fg = "#16181d", bg = "#f6f8ff" },
+            -- },
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+          },
+          {
             "diagnostics",
             diagnostics_color = {
               error = "lualine_a_normal", -- Changes diagnostics' error color.
@@ -37,20 +52,6 @@ return {
               warn = " ",
               info = " ",
               hint = "󰝶 ",
-            },
-          },
-          {
-            "diff",
-            colored = true,
-            diff_color = {
-              added = { fg = "#16181d", bg = "#f6f8ff" },
-              modified = { fg = "#16181d", bg = "#f6f8ff" },
-              removed = { fg = "#16181d", bg = "#f6f8ff" },
-            },
-            symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
             },
           },
         },

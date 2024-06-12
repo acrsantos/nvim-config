@@ -5,7 +5,6 @@ return {
       inlay_hints = { enabled = true },
     },
   },
-  -- Language Server
   {
     "williamboman/mason.nvim",
     opts = {
@@ -24,7 +23,6 @@ return {
       },
     },
   },
-  -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {

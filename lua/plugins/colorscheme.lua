@@ -2,16 +2,16 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "default",
-      -- colorscheme = "tokyonight",
       -- colorscheme = "default",
+      colorscheme = "andromeda",
+      -- colorscheme = "tokyonight",
       -- colorscheme = "solarized",
       -- colorscheme = "rose-pine",
     },
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    lazy = true,
     config = function()
       require("tokyonight").setup({
         -- your configuration comes here
@@ -133,12 +133,12 @@ return {
   },
   {
     "maxmx03/solarized.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       -- vim.o.background = "light" -- or 'light'
       require("solarized").setup({
-        transparent = false, -- enable transparent background
+        transparent = true, -- enable transparent background
         palette = "selenized", -- or selenized
         styles = {
           comments = {},
@@ -181,10 +181,10 @@ return {
           local blend = colorhelper.blend
 
           return {
-            -- NeoTreeNormal = { fg = colors.base0, bg = "NONE" },
-            -- NormalFloat = { fg = "#839496", bg = "NONE" },
-            -- ColorColumn = { bg = "NONE" },
-            -- LineNr = { bg = "NONE" },
+            NeoTreeNormal = { fg = colors.base0, bg = "NONE" },
+            NormalFloat = { fg = "#839496", bg = "NONE" },
+            ColorColumn = { bg = "NONE" },
+            LineNr = { bg = "NONE" },
           }
         end,
         colors = {},
@@ -193,5 +193,12 @@ return {
       })
       -- vim.cmd.colorscheme("solarized")
     end,
+    {
+      dir = "~/dev/andromeda.nvim/",
+      lazy = false,
+      config = function ()
+        require("andromeda").setup({})
+      end
+    }
   },
 }
