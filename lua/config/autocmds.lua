@@ -57,6 +57,21 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
+vim.api.nvim_create_autocmd({"BufLeave", "WinLeave"}, {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.cursorline = false
+    end
+})
+
+-- Show cursor and cursorline when buffer gains focus
+vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.cursorline = true
+    end
+})
+
 -- Hide cmd line
 -- vim.opt.cmdheight = 0
 --

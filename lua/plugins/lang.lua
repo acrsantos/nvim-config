@@ -4,11 +4,6 @@ return {
     dir = "~/dev/cmake-tools.nvim/",
     ft = { 'cpp' },
     opts = {
-      cmake_build_options = {}, -- this will be passed when invoke `CMakeBuild`
-      -- support macro expansion:
-      --       ${kit}
-      --       ${kitGenerator}
-      --       ${variant:xx}
       cmake_build_directory = 'build/${variant:buildType}', -- this is used to specify generate directory for cmake, allows macro expansion, relative to vim.loop.cwd()
       cmake_kits_path = nil, -- this is used to specify global cmake kits path, see CMakeKits for detailed usage
       cmake_dap_configuration = { -- debug settings for cmake

@@ -53,3 +53,4 @@ vim.api.nvim_set_hl(0, "CodeBlock", { bg = "NONE" })
 -- vim.opt.background = "light"
 -- vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#4f4f4f", bg = "NONE" })
 -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#e0e2ea" })
+vim.cmd('Copilot disable')

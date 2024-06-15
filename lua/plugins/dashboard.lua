@@ -1,7 +1,7 @@
 return {
   "nvimdev/dashboard-nvim",
   event = "VimEnter",
-  enabled = false,
+  enabled = true,
   opts = function()
     local logo = [[
 ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
