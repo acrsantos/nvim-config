@@ -31,7 +31,7 @@ return {
       local lspkind = require("lspkind")
       return {
         completion = {
-          -- autocomplete = true,
+          autocomplete = false,
           completeopt = "menu,menuone,noselect,noinsert",
         },
         snippet = {
