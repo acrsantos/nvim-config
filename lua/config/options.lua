@@ -29,11 +29,11 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   -- title = "hover",
 })
 
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
---   virtual_text = {
---     severity = { min = vim.diagnostic.severity.ERROR },
---   },
--- })
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.ERROR },
+  },
+})
 
 vim.diagnostic.config({
   float = {
@@ -43,3 +43,11 @@ vim.diagnostic.config({
 
 vim.opt.fillchars = {eob = " "}
 vim.opt.termsync = false
+
+vim.g.rustaceanvim = {
+  tools = {
+    float_win_config = {
+      border = "single",
+    }
+  }
+}
