@@ -25,28 +25,13 @@ return {
         },
         lualine_x = {
           {
-            "diff",
-            padding = { left = 0, right = 1 },
-            colored = true,
-            -- diff_color = {
-            --   added = { fg = "#16181d", bg = "#f6f8ff" },
-            --   modified = { fg = "#16181d", bg = "#f6f8ff" },
-            --   removed = { fg = "#16181d", bg = "#f6f8ff" },
-            -- },
-            symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
-            },
-          },
-          {
             "diagnostics",
-            diagnostics_color = {
-              error = "lualine_a_normal", -- Changes diagnostics' error color.
-              warn = "lualine_a_normal", -- Changes diagnostics' warn color.
-              info = "lualine_a_normal", -- Changes diagnostics' info color.
-              hint = "lualine_a_normal", -- Changes diagnostics' hint color.
-            },
+            -- diagnostics_color = {
+            --   error = "lualine_a_normal", -- Changes diagnostics' error color.
+            --   warn = "lualine_a_normal", -- Changes diagnostics' warn color.
+            --   info = "lualine_a_normal", -- Changes diagnostics' info color.
+            --   hint = "lualine_a_normal", -- Changes diagnostics' hint color.
+            -- },
             symbols = {
               error = " ",
               warn = " ",
@@ -57,17 +42,29 @@ return {
         },
         lualine_y = {
           {
+            "diff",
+            diff_color = {
+              added = { fg = "#08e7c5", bg = "#262933" },
+              modified = { fg = "#fee56c", bg = "#262933" },
+              removed = { fg = "#8e0f3a", bg = "#262933" },
+            },
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+          },
+        },
+        lualine_z = {
+          {
             "progress",
           },
           {
             "location",
-            -- color = { fg = colors.green, bg = colors.none },
           },
-        },
-        lualine_z = {
-          function()
-            return os.date("%X")
-          end,
+          -- function()
+          --   return os.date("%X")
+          -- end,
         },
       },
       extensions = { "neo-tree", "lazy" },
