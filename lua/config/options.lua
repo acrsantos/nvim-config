@@ -41,7 +41,7 @@ vim.diagnostic.config({
   },
 })
 
-vim.opt.fillchars = {eob = " "}
+vim.opt.fillchars = {eob = "~"}
 vim.opt.termsync = false
 
 vim.g.rustaceanvim = {

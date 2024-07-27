@@ -3,13 +3,13 @@
 -- vim.opt.shiftwidth = 4
 
 local wk = require("which-key")
-wk.register({
-  c = {
-    c = { "<cmd>CMakeRun<cr>", "CMake Run" },
-    t = { "<cmd>CMakeSelectBuildType<cr>", "CMake Select Build Type" },
-    g = { "<cmd>CMakeGenerate<cr>", "CMake Generate" },
-    b = { "<cmd>CMakeBuild<cr>", "CMake Build" },
-    D = { "<cmd>CMakeDebug<cr>", "CMake Debug" },
-    i = { "<cmd>CMakeInstall<cr>", "CMake Install" },
-  },
+wk.add({
+  {
+    { "<leader>cD", "<cmd>CMakeDebug<cr>", desc = "CMake Debug" },
+    { "<leader>cb", "<cmd>CMakeBuild<cr>", desc = "CMake Build" },
+    { "<leader>cc", "<cmd>CMakeRun<cr>", desc = "CMake Run" },
+    { "<leader>cg", "<cmd>CMakeGenerate<cr>", desc = "CMake Generate" },
+    { "<leader>ci", "<cmd>CMakeInstall<cr>", desc = "CMake Install" },
+    { "<leader>ct", "<cmd>CMakeSelectBuildType<cr>", desc = "CMake Select Build Type" },
+  }
 }, { prefix = "<leader>" })
