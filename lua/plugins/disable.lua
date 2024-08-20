@@ -23,6 +23,10 @@ return {
     enabled = false,
   },
   {
+    "catppuccin/nvim",
+    enabled = false,
+  },
+  {
     "echasnovski/mini.animate",
     event = "VeryLazy",
     enabled = false,

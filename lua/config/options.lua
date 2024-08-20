@@ -13,11 +13,12 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.background = "light"
 -- vim.opt.colorcolumn = "120"
 
 -- lua/config/options.lua
 
-vim.o.guifont = "JetBrainsMono NF:h09"
+vim.o.guifont = "BerkeleyMono Nerd Font:h15"
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
   border = "single",
@@ -29,11 +30,11 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   -- title = "hover",
 })
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = {
-    severity = { min = vim.diagnostic.severity.ERROR },
-  },
-})
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+--   virtual_text = {
+--     severity = { min = vim.diagnostic.severity.ERROR },
+--   },
+-- })
 
 vim.diagnostic.config({
   float = {
@@ -41,7 +42,7 @@ vim.diagnostic.config({
   },
 })
 
-vim.opt.fillchars = {eob = "~"}
+vim.opt.fillchars = {eob = " "}
 vim.opt.termsync = false
 
 vim.g.rustaceanvim = {

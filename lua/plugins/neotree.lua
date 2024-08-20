@@ -3,7 +3,7 @@ return {
   -- enabled = false,
   opts = {
     window = {
-      position = "left",
+      position = "current",
       width = 30,
     },
     filesystem = {
