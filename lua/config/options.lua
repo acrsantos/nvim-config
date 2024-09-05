@@ -13,7 +13,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.background = "light"
+-- vim.opt.background = "dark"
 -- vim.opt.colorcolumn = "120"
 
 -- lua/config/options.lua
@@ -38,7 +38,6 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 
 vim.diagnostic.config({
   float = {
-    border = "single",
   },
 })
 

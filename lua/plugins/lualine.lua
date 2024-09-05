@@ -24,7 +24,8 @@ return {
             symbols = { modified = "  ", readonly = "", unnamed = "" },
           },
         },
-        lualine_x = {
+        lualine_x = {},
+        lualine_y = {
           {
             "diagnostics",
             -- diagnostics_color = {
@@ -33,6 +34,7 @@ return {
             --   info = "lualine_a_normal", -- Changes diagnostics' info color.
             --   hint = "lualine_a_normal", -- Changes diagnostics' hint color.
             -- },
+            padding = { left = 1, right = 0 },
             symbols = {
               error = " ",
               warn = " ",
@@ -40,15 +42,13 @@ return {
               hint = "󰝶 ",
             },
           },
-        },
-        lualine_y = {
           {
             "diff",
-            diff_color = {
-              added = { fg = "#08e7c5", bg = "#262933" },
-              modified = { fg = "#fee56c", bg = "#262933" },
-              removed = { fg = "#8e0f3a", bg = "#262933" },
-            },
+            -- diff_color = {
+            --   added = { fg = "auto", bg = "auto" },
+            --   modified = { fg = "auto", bg = "auto" },
+            --   removed = { fg = "auto", bg = "auto" },
+            -- },
             symbols = {
               added = icons.git.added,
               modified = icons.git.modified,
