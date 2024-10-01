@@ -3,8 +3,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "default",
-      -- colorscheme = "andromeda",
-      colorscheme = "tokyonight",
+      colorscheme = "andromeda",
+      -- colorscheme = "tokyonight",
       -- colorscheme = "solarized",
       -- colorscheme = "rose-pine",
     },
@@ -51,160 +51,16 @@ return {
     end,
   },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = true,
+    dir = "~/dev/andromeda.nvim/",
+    lazy = false,
     config = function()
-      require("rose-pine").setup({
-        variant = "auto", -- auto, main, moon, or dawn
-        dark_variant = "main", -- main, moon, or dawn
-        dim_inactive_windows = true,
-        extend_background_behind_borders = true,
-
-        enable = {
-          terminal = true,
-          legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-          migrations = true, -- Handle deprecated options automatically
-        },
-
-        styles = {
-          bold = true,
-          italic = false,
-          transparency = false,
-        },
-
-        groups = {
-          border = "muted",
-          link = "iris",
-          panel = "surface",
-
-          error = "love",
-          hint = "iris",
-          info = "foam",
-          note = "pine",
-          todo = "rose",
-          warn = "gold",
-
-          git_add = "foam",
-          git_change = "rose",
-          git_delete = "love",
-          git_dirty = "rose",
-          git_ignore = "muted",
-          git_merge = "iris",
-          git_rename = "pine",
-          git_stage = "iris",
-          git_text = "rose",
-          git_untracked = "subtle",
-
-          h1 = "iris",
-          h2 = "foam",
-          h3 = "rose",
-          h4 = "gold",
-          h5 = "pine",
-          h6 = "foam",
-        },
-
-        highlight_groups = {
-          -- Comment = { fg = "foam" },
-          -- VertSplit = { fg = "muted", bg = "muted" },
-        },
-
-        before_highlight = function(group, highlight, palette)
-          -- Disable all undercurls
-          -- if highlight.undercurl then
-          --     highlight.undercurl = false
-          -- end
-          --
-          -- Change palette colour
-          -- if highlight.fg == palette.pine then
-          --     highlight.fg = palette.foam
-          -- end
-        end,
+      require("andromeda").setup({
+        bold_vert_split = false, -- use bold vertical separators
+        dim_nc_background = false, -- dim 'non-current' window backgrounds
+        disable_background = false, -- disable background
+        disable_float_background = false, -- disable background for floats
+        disable_italics = false, -- disable italics
       })
-
-      vim.cmd("colorscheme rose-pine")
-      -- vim.cmd("colorscheme rose-pine-main")
-      -- vim.cmd("colorscheme rose-pine-moon")
-      -- vim.cmd("colorscheme rose-pine-dawn")
-
-      -- Set colorscheme after options
-      -- vim.cmd("colorscheme rose-pine")
     end,
-  },
-  {
-    "maxmx03/solarized.nvim",
-    lazy = true,
-    priority = 1000,
-    config = function()
-      -- vim.o.background = "light" -- or 'light'
-      require("solarized").setup({
-        transparent = true, -- enable transparent background
-        palette = "selenized", -- or selenized
-        styles = {
-          comments = {},
-          functions = {},
-          variables = {},
-          numbers = {},
-          constants = {},
-          parameters = {},
-          keywords = {},
-          types = {},
-        },
-        enables = {
-          bufferline = true,
-          cmp = true,
-          diagnostic = true,
-          dashboard = true,
-          editor = true,
-          gitsign = true,
-          hop = true,
-          indentblankline = true,
-          lsp = true,
-          lspsaga = true,
-          navic = true,
-          neogit = true,
-          neotree = true,
-          notify = true,
-          noice = true,
-          semantic = true,
-          syntax = true,
-          telescope = true,
-          tree = true,
-          treesitter = true,
-          todo = true,
-          whichkey = true,
-          mini = true,
-        },
-        highlights = function(colors, colorhelper)
-          local darken = colorhelper.darken
-          local lighten = colorhelper.lighten
-          local blend = colorhelper.blend
-
-          return {
-            NeoTreeNormal = { fg = colors.base0, bg = "NONE" },
-            NormalFloat = { fg = "#839496", bg = "NONE" },
-            ColorColumn = { bg = "NONE" },
-            LineNr = { bg = "NONE" },
-          }
-        end,
-        colors = {},
-        theme = "neo", -- or 'neo'
-        autocmd = true,
-      })
-      -- vim.cmd.colorscheme("solarized")
-    end,
-    {
-      dir = "~/dev/andromeda.nvim/",
-      lazy = false,
-      config = function ()
-        require("andromeda").setup({
-          bold_vert_split = false, -- use bold vertical separators
-          dim_nc_background = false, -- dim 'non-current' window backgrounds
-          disable_background = false, -- disable background
-          disable_float_background = false, -- disable background for floats
-          disable_italics = false, -- disable italics
-        })
-      end
-    }
   },
 }
