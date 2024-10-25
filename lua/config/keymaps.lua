@@ -23,6 +23,13 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.del("n", "<C-/>")
 vim.keymap.del("n", "<C-_>")
 
+-- Delete existing keymaps
+vim.keymap.del("n", "<leader>e")
+vim.keymap.del("n", "<C-h>")
+vim.keymap.del("n", "<C-j>")
+vim.keymap.del("n", "<C-k>")
+vim.keymap.del("n", "<C-l>")
+
 local opts = { silent = true, remap = true }
 vim.keymap.set("o", "<C-/>", "gc", opts)
 vim.keymap.set("x", "<C-/>", "gc", opts)
@@ -32,3 +39,4 @@ vim.keymap.set("o", "<C-_>", "gc", opts)
 vim.keymap.set("x", "<C-_>", "gc", opts)
 vim.keymap.set("v", "<C-_>", "gc", opts)
 vim.keymap.set("n", "<C-_>", "gcc", opts)
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal<cr>", opts)

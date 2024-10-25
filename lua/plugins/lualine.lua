@@ -18,7 +18,7 @@ return {
         lualine_a = { "mode" },
         lualine_b = { { "branch", icon = "" } },
         lualine_c = {
-          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 1 } },
           {
             "filename",
             symbols = { modified = "  ", readonly = "", unnamed = "" },
@@ -44,11 +44,11 @@ return {
           },
           {
             "diff",
-            -- diff_color = {
-            --   added = { fg = "auto", bg = "auto" },
-            --   modified = { fg = "auto", bg = "auto" },
-            --   removed = { fg = "auto", bg = "auto" },
-            -- },
+            diff_color = {
+            added = { fg = "#08e7c5", bg = "#303340" },
+            modified = { fg = "#fee56c", bg = "#303340" },
+            removed = { fg = "#F82871", bg = "#303340" },
+            },
             symbols = {
               added = icons.git.added,
               modified = icons.git.modified,

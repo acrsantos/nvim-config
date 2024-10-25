@@ -9,18 +9,18 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- local luasnip = require("luasnip")
--- local unlinkgrp = vim.api.nvim_create_augroup("UnlinkSnippetOnModeChange", { clear = true })
--- vim.api.nvim_create_autocmd("ModeChanged", {
---   group = unlinkgrp,
---   pattern = { "s:n", "i:*" },
---   desc = "Forget the current snippet when leaving the insert mode",
---   callback = function(evt)
---     if luasnip.session and luasnip.session.current_nodes[evt.buf] and not luasnip.session.jump_active then
---       luasnip.unlink_current()
---     end
---   end,
--- })
+local luasnip = require("luasnip")
+local unlinkgrp = vim.api.nvim_create_augroup("UnlinkSnippetOnModeChange", { clear = true })
+vim.api.nvim_create_autocmd("ModeChanged", {
+  group = unlinkgrp,
+  pattern = { "s:n", "i:*" },
+  desc = "Forget the current snippet when leaving the insert mode",
+  callback = function(evt)
+    if luasnip.session and luasnip.session.current_nodes[evt.buf] and not luasnip.session.jump_active then
+      luasnip.unlink_current()
+    end
+  end,
+})
 
 local ls = require("luasnip")
 vim.api.nvim_create_autocmd("CursorMovedI", {
@@ -74,7 +74,6 @@ vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
 
 -- Hide cmd line
 -- vim.opt.cmdheight = 0
---
 -- vim.api.nvim_create_autocmd('CmdlineEnter', {
 --     group = vim.api.nvim_create_augroup(
 --         'cmdheight_1_on_cmdlineenter',
