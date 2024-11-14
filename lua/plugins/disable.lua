@@ -1,15 +1,15 @@
 return {
-  {
-    "rcarriga/nvim-notify",
-    enabled = false,
-    opts = {
-      background_colour = "#000000",
-    },
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    enabled = false,
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   enabled = false,
+  --   opts = {
+  --     background_colour = "#000000",
+  --   },
+  -- },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-context",
+  --   enabled = true,
+  -- },
   {
     "folke/noice.nvim",
     enabled = false,
@@ -60,10 +60,6 @@ return {
         },
       }
     end,
-  },
-  {
-    "SmiteshP/nvim-navic",
-    enabled = false,
   },
   {
     "lukas-reineke/indent-blankline.nvim",

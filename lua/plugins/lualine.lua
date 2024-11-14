@@ -28,32 +28,21 @@ return {
         lualine_y = {
           {
             "diagnostics",
-            -- diagnostics_color = {
-            --   error = "lualine_a_normal", -- Changes diagnostics' error color.
-            --   warn = "lualine_a_normal", -- Changes diagnostics' warn color.
-            --   info = "lualine_a_normal", -- Changes diagnostics' info color.
-            --   hint = "lualine_a_normal", -- Changes diagnostics' hint color.
+            padding = { left = 1, right = 1 },
+            -- symbols = {
+            --   error = " ",
+            --   warn = " ",
+            --   info = " ",
+            --   hint = "󰝶 ",
             -- },
-            padding = { left = 1, right = 0 },
-            symbols = {
-              error = " ",
-              warn = " ",
-              info = " ",
-              hint = "󰝶 ",
-            },
           },
           {
             "diff",
-            diff_color = {
-            added = { fg = "#08e7c5", bg = "#303340" },
-            modified = { fg = "#fee56c", bg = "#303340" },
-            removed = { fg = "#F82871", bg = "#303340" },
-            },
-            symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
-            },
+            -- symbols = {
+            --   added = icons.git.added,
+            --   modified = icons.git.modified,
+            --   removed = icons.git.removed,
+            -- },
           },
         },
         lualine_z = {
@@ -63,9 +52,6 @@ return {
           {
             "location",
           },
-          -- function()
-          --   return os.date("%X")
-          -- end,
         },
       },
       extensions = { "neo-tree", "lazy" },
