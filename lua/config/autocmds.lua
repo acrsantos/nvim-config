@@ -72,6 +72,15 @@ vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
     end
 })
 
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
+    pattern = { "*" },
+    callback = function()
+        if vim.opt.buftype:get() == "terminal" then
+            vim.cmd(":startinsert")
+        end
+    end
+})
+
 -- Hide cmd line
 -- vim.opt.cmdheight = 0
 -- vim.api.nvim_create_autocmd('CmdlineEnter', {

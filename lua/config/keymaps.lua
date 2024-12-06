@@ -40,3 +40,6 @@ vim.keymap.set("x", "<C-_>", "gc", opts)
 vim.keymap.set("v", "<C-_>", "gc", opts)
 vim.keymap.set("n", "<C-_>", "gcc", opts)
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal<cr>", opts)
+
+vim.api.nvim_set_keymap("t", "<esc><esc>", "<c-\\><c-n>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<M-CR>", "<esc>A;", { noremap = true })
