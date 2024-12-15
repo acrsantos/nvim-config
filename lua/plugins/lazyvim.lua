@@ -1,8 +1,13 @@
 return {
   {
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    opts = {}, -- this is equalent to setup({}) function
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      dashboard = { enabled = false },
+      bigfile = { enabled = true },
+      quickfile = { enabled = true },
+    },
   },
   {
     "sindrets/diffview.nvim",
@@ -21,4 +26,13 @@ return {
       },
     },
   },
+  {
+    "stevearc/overseer.nvim",
+    opts = {
+      task_list = {
+        direction = "left",
+      },
+    },
+  },
+
 }
