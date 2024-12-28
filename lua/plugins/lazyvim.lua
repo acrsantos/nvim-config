@@ -7,6 +7,14 @@ return {
       dashboard = { enabled = false },
       bigfile = { enabled = true },
       quickfile = { enabled = true },
+      indent = { enabled = false },
+      terminal = { enabled = false },
+      styles = {
+        split = {
+          height = 0.3,
+          width = 0.4,
+        },
+      },
     },
   },
   {
@@ -34,5 +42,18 @@ return {
       },
     },
   },
-
+  {
+    "Saghen/blink.cmp",
+    opts = {
+      completion = {
+        menu = { border = "single" },
+        documentation = { window = { border = 'single' } },
+        list = { selection = "manual" },
+      },
+      signature = {
+        enabled = true,
+        window = { border = 'single' }
+      }
+    },
+  },
 }
