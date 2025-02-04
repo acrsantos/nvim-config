@@ -17,16 +17,16 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.o.guifont = "BerkeleyMono Nerd Font:h15"
+vim.o.guifont = "Berkeley Mono:h15"
 vim.diagnostic.config({ float = { border = "single", }, })
 
 -- Plugins
 vim.g.rustaceanvim = { tools = { float_win_config = { border = "single", } } }
 vim.g.snacks_animate = false
 
--- local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
--- function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
---   opts = opts or {}
---   opts.border = opts.border or "single"
---   return orig_util_open_floating_preview(contents, syntax, opts, ...)
--- end
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or "single"
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end

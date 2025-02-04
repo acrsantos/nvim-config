@@ -4,6 +4,7 @@ return {
     opts = {
       -- colorscheme = "default",
       colorscheme = "andromeda",
+      -- colorscheme = "monochrome",
       -- colorscheme = "tokyonight",
     },
   },
@@ -59,6 +60,9 @@ return {
         },
       })
     end,
+  },
+  {
+    "kdheepak/monochrome.nvim",
   },
   {
     dir = "~/dev/andromeda.nvim/",
