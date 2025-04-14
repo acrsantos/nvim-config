@@ -1,7 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter-context",
-    enabled = false,
+    -- enabled = false,
   },
   {
     "folke/noice.nvim",

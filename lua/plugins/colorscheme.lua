@@ -4,7 +4,7 @@ return {
     opts = {
       -- colorscheme = "default",
       colorscheme = "andromeda",
-      -- colorscheme = "monochrome",
+      -- colorscheme = "nightfox",
       -- colorscheme = "tokyonight",
     },
   },
@@ -62,9 +62,6 @@ return {
     end,
   },
   {
-    "kdheepak/monochrome.nvim",
-  },
-  {
     dir = "~/dev/andromeda.nvim/",
     lazy = false,
     config = function()
@@ -77,4 +74,8 @@ return {
       })
     end,
   },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false
+  }
 }
