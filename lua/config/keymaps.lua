@@ -18,7 +18,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 -- vim.keymap.set("n", "<C-_>", "gcc", opts)
 
 vim.api.nvim_set_keymap("t", "<esc><esc>", "<c-\\><c-n>", { noremap = true })
-vim.api.nvim_set_keymap("i", "<M-CR>", "<esc>A;", { noremap = true })
+vim.api.nvim_set_keymap("i", "<M-CR>", "<c-w>p;", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>e", "<cmd> lua require('mini.files').open(vim.uv.cwd(), true)<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>E", "<cmd> lua require('mini.files').open(vim.api.nvim_buf_get_name(0), true)<CR>", { noremap = true })
 
 -- TODO: Find a better way to do this
 -- vim.api.nvim_set_keymap("t", "<C-w>h", "<c-\\><c-n><C-w>h", { noremap = true })

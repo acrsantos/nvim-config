@@ -1,6 +1,5 @@
 return {
   {
-    -- 'Civitasv/cmake-tools.nvim',
     dir = "~/dev/cmake-tools.nvim/",
     ft = { "cpp" },
     dependencies = {
@@ -18,7 +17,7 @@ return {
         console = "integratedTerminal",
       },
       cmake_executor = { -- executor to use
-        name = "overseer", -- name of the executor
+        name = "terminal", -- name of the executor
         opts = {}, -- the options the executor will get, possible values depend on the executor type. See `default_opts` for possible values.
         default_opts = { -- a list of default and possible values for executors
           quickfix = {
@@ -67,7 +66,7 @@ return {
         },
       },
       cmake_runner = { -- runner to use
-        name = "overseer", -- name of the runner
+        name = "terminal", -- name of the runner
         opts = {}, -- the options the runner will get, possible values depend on the runner type. See `default_opts` for possible values.
         default_opts = { -- a list of default and possible values for runners
           quickfix = {
