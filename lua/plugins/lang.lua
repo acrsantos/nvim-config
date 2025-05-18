@@ -2,9 +2,9 @@ return {
   {
     dir = "~/dev/cmake-tools.nvim/",
     ft = { "cpp" },
-    dependencies = {
-      "akinsho/toggleterm.nvim"
-    },
+    -- dependencies = {
+    --   "akinsho/toggleterm.nvim"
+    -- },
     opts = {
       cmake_build_directory = "build/${variant:buildType}", -- this is used to specify generate directory for cmake, allows macro expansion, relative to vim.loop.cwd()
       cmake_kits_path = nil, -- this is used to specify global cmake kits path, see CMakeKits for detailed usage

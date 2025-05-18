@@ -5,7 +5,7 @@ return {
     lazy = false,
     opts = {
       dashboard = {
-        enabled = true,
+        enabled = false,
         sections = {
           -- { section = "header" },
           { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
@@ -79,7 +79,7 @@ return {
       task_list = {
         direction = "right",
       },
-      templates = { "builtin", "cpp.run", "cpp.compile" },
+      templates = { "builtin", "cpp.run", "cpp.compile", "python.py" },
       component_aliases = {
         -- Most tasks are initialized with the default components
         default = {
@@ -101,7 +101,7 @@ return {
       completion = {
         menu = {
           border = "single",
-          auto_show = true,
+          auto_show = false,
         },
         documentation = { window = { border = "single" } },
         list = { selection = { preselect = false, auto_insert = true } },
@@ -109,15 +109,6 @@ return {
       signature = {
         enabled = true,
         window = { border = "single" },
-      },
-    },
-  },
-  {
-    "echasnovski/mini.files",
-    opts = {
-      mappings = {
-        go_in = "L",
-        go_in_plus = "l",
       },
     },
   },

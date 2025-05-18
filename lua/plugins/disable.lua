@@ -1,18 +1,30 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter-context",
-    -- enabled = false,
+    enabled = false,
   },
   {
     "folke/noice.nvim",
     enabled = false,
   },
+  {
+    "echasnovski/mini.pairs",
+    enabled = false
+  },
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
   -- {
-  --   "akinsho/bufferline.nvim",
-  --   enabled = false,
+  --   "nvim-lualine/lualine.nvim",
+  --   enabled = false
   -- },
   {
-    "nvim-lualine/lualine.nvim",
+    "catppuccin/nvim",
+    enabled = false
+  },
+  {
+    "folke/todo-comments.nvim",
     enabled = false
   }
 }

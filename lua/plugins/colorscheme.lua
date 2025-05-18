@@ -2,10 +2,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "default",
       colorscheme = "andromeda",
-      -- colorscheme = "nightfox",
-      -- colorscheme = "tokyonight",
     },
   },
   {
@@ -66,7 +63,7 @@ return {
     lazy = false,
     config = function()
       require("andromeda").setup({
-        bold_vert_split = false, -- use bold vertical separators
+        bold_vert_split = true, -- use bold vertical separators
         dim_nc_background = false, -- dim 'non-current' window backgrounds
         disable_background = false, -- disable background
         disable_float_background = false, -- disable background for floats
@@ -74,8 +71,4 @@ return {
       })
     end,
   },
-  {
-    "EdenEast/nightfox.nvim",
-    lazy = false
-  }
 }

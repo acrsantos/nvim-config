@@ -50,6 +50,7 @@ return {
         "vimdoc",
         "yaml",
       },
+
       -- highlight = {
       --   enable = false,
       --   disable = function(lang, buf)
