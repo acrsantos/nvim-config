@@ -34,6 +34,12 @@ vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
     end
 })
 
+vim.api.nvim_create_autocmd("CursorHold", {
+    callback = function()
+        vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+    end,
+})
+
 -- vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
 --     pattern = { "*" },
 --     callback = function()
@@ -50,7 +56,6 @@ vim.api.nvim_create_autocmd({"BufEnter"}, {
 })
 
 -- Hide cmd line
--- vim.opt.cmdheight = 0
 -- vim.api.nvim_create_autocmd('CmdlineEnter', {
 --     group = vim.api.nvim_create_augroup(
 --         'cmdheight_1_on_cmdlineenter',
@@ -78,3 +83,4 @@ vim.api.nvim_create_autocmd({"BufEnter"}, {
 --     pattern = { '*' },
 --     command = 'redrawstatus',
 -- })
+
