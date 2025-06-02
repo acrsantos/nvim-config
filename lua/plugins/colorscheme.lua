@@ -3,6 +3,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "andromeda",
+      -- colorscheme = "default",
     },
   },
   {
@@ -63,10 +64,10 @@ return {
     lazy = false,
     config = function()
       require("andromeda").setup({
-        bold_vert_split = true, -- use bold vertical separators
+        bold_vert_split = false, -- use bold vertical separators
         dim_nc_background = false, -- dim 'non-current' window backgrounds
         disable_background = false, -- disable background
-        disable_float_background = false, -- disable background for floats
+        disable_float_background = true, -- disable background for floats
         disable_italics = true, -- disable italics
       })
     end,

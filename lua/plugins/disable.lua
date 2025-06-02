@@ -9,22 +9,22 @@ return {
   },
   {
     "echasnovski/mini.pairs",
-    enabled = false
+    enabled = false,
   },
   {
     "akinsho/bufferline.nvim",
+    enabled = true,
+  },
+  {
+    "nvim-lualine/lualine.nvim",
     enabled = false,
   },
-  -- {
-  --   "nvim-lualine/lualine.nvim",
-  --   enabled = false
-  -- },
   {
     "catppuccin/nvim",
-    enabled = false
+    enabled = false,
   },
   {
     "folke/todo-comments.nvim",
-    enabled = false
-  }
+    enabled = false,
+  },
 }

@@ -3,7 +3,7 @@
 -- Add any additional autocmds here
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c", "cpp", "*" },
+  pattern = { "c", "cpp" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -19,26 +19,26 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
-vim.api.nvim_create_autocmd({"BufLeave", "WinLeave"}, {
-    pattern = "*",
-    callback = function()
-        vim.opt_local.cursorline = false
-    end
+vim.api.nvim_create_autocmd({ "BufLeave", "WinLeave" }, {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.cursorline = false
+  end,
 })
 
 -- Show cursor and cursorline when buffer gains focus
-vim.api.nvim_create_autocmd({"BufEnter", "WinEnter"}, {
-    pattern = "*",
-    callback = function()
-        vim.opt_local.cursorline = true
-    end
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.cursorline = true
+  end,
 })
 
-vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function()
-        vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
-    end,
-})
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--     callback = function()
+--         vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+--     end,
+-- })
 
 -- vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
 --     pattern = { "*" },
@@ -49,10 +49,10 @@ vim.api.nvim_create_autocmd("CursorHold", {
 --     end
 -- })
 
-vim.api.nvim_create_autocmd({"BufEnter"}, {
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
   callback = function()
     vim.diagnostic.config({ virtual_text = false })
-  end
+  end,
 })
 
 -- Hide cmd line
@@ -83,4 +83,3 @@ vim.api.nvim_create_autocmd({"BufEnter"}, {
 --     pattern = { '*' },
 --     command = 'redrawstatus',
 -- })
-

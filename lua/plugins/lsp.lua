@@ -50,6 +50,9 @@ return {
         "vimdoc",
         "yaml",
       },
+      -- indent = {
+      --   enable = false
+      -- }
 
       -- highlight = {
       --   enable = false,

@@ -112,4 +112,25 @@ return {
       },
     },
   },
+  {
+    "ibhagwan/fzf-lua",
+    opts = {
+      "ivy",
+      fzf_colors = true,
+      fzf_opts = {
+        ["--no-scrollbar"] = true,
+      },
+      winopts = {
+        row = 1,
+        col = 1,
+        width = 1,
+        height = 0.38,
+        backdrop = 100,
+        preview = {
+          hidden = true,
+        },
+        ui_select = function() end,
+      },
+    },
+  },
 }
