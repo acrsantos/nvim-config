@@ -95,23 +95,23 @@ return {
       },
     },
   },
-  {
-    "Saghen/blink.cmp",
-    opts = {
-      completion = {
-        menu = {
-          border = "single",
-          auto_show = false,
-        },
-        documentation = { window = { border = "single" } },
-        list = { selection = { preselect = false, auto_insert = true } },
-      },
-      signature = {
-        enabled = true,
-        window = { border = "single" },
-      },
-    },
-  },
+  -- {
+  --   "Saghen/blink.cmp",
+  --   opts = {
+  --     completion = {
+        -- menu = {
+        --   border = "single",
+        --   auto_show = true,
+        -- },
+        -- documentation = { window = { border = "single" } },
+      --   list = { selection = { preselect = false, auto_insert = true } },
+      -- },
+      -- signature = {
+      --   enabled = true,
+      --   window = { border = "single" },
+      -- },
+  --   },
+  -- },
   {
     "ibhagwan/fzf-lua",
     opts = {

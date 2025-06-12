@@ -11,6 +11,10 @@ return {
     "echasnovski/mini.pairs",
     enabled = false,
   },
+  -- {
+  --   "echasnovski/mini.hipatterns",
+  --   enabled = false,
+  -- },
   {
     "akinsho/bufferline.nvim",
     enabled = true,

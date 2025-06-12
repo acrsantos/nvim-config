@@ -3,7 +3,7 @@
 -- Add any additional autocmds here
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "c", "cpp", "php" },
+  pattern = { "c", "cpp", "php", "*" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -33,6 +33,12 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
     vim.opt_local.cursorline = true
   end,
 })
+
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(args)
+--     vim.lsp.document_color.enable(true, args.buf, { style = "virtual" })
+--   end,
+-- })
 
 -- vim.api.nvim_create_autocmd("CursorHold", {
 --     callback = function()
