@@ -4,7 +4,7 @@ return {
   opts = {
     window = {
       position = "left",
-      width = 30,
+      width = 35,
     },
     filesystem = {
       hijack_netrw_behavior = "open_current", -- open_default

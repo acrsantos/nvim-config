@@ -1,9 +1,9 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 
--- require("vim._extui").enable({
---   box = "cmd",
--- })
+require("vim._extui").enable({
+  box = "cmd",
+})
 
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
@@ -23,6 +23,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.linespace = 0
+vim.opt.cmdheight = 0
 
 vim.o.exrc = true
 
@@ -34,12 +35,12 @@ vim.o.exrc = true
 -- })
 
 vim.o.guifont = "Berkeley Mono:h12"
-vim.diagnostic.config({
+-- vim.diagnostic.config({
   -- virtual_lines = {
   --   current_line = true,
   -- }
   -- virtual_lines = true
-})
+-- })
 -- Plugins
 vim.g.snacks_animate = false
 

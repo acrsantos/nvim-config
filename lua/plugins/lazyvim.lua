@@ -5,13 +5,21 @@ return {
     lazy = false,
     opts = {
       dashboard = {
-        enabled = false,
+        enabled = true,
+        preset = {
+          header = [[
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+        },
         sections = {
-          -- { section = "header" },
+          { section = "header" },
           { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-          -- { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-          -- { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-          -- { section = "startup" },
+          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          { section = "startup" },
         },
       },
       bigfile = { enabled = true },
@@ -95,23 +103,23 @@ return {
       },
     },
   },
-  -- {
-  --   "Saghen/blink.cmp",
-  --   opts = {
-  --     completion = {
-        -- menu = {
-        --   border = "single",
-        --   auto_show = true,
-        -- },
-        -- documentation = { window = { border = "single" } },
-      --   list = { selection = { preselect = false, auto_insert = true } },
-      -- },
-      -- signature = {
-      --   enabled = true,
-      --   window = { border = "single" },
-      -- },
-  --   },
-  -- },
+  {
+    "Saghen/blink.cmp",
+    opts = {
+      completion = {
+        menu = {
+          border = "single",
+          auto_show = true,
+        },
+        documentation = { window = { border = "single" } },
+        list = { selection = { preselect = false, auto_insert = true } },
+      },
+      signature = {
+        enabled = true,
+        window = { border = "single" },
+      },
+    },
+  },
   {
     "ibhagwan/fzf-lua",
     opts = {
