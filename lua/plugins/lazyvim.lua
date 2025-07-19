@@ -107,37 +107,16 @@ return {
     "Saghen/blink.cmp",
     opts = {
       completion = {
-        menu = {
-          border = "single",
-          auto_show = true,
-        },
-        documentation = { window = { border = "single" } },
-        list = { selection = { preselect = false, auto_insert = true } },
+      --   menu = {
+      --     border = "single",
+      --     auto_show = true,
+      --   },
+      --   documentation = { window = { border = "single" } },
+      list = { selection = { preselect = false, auto_insert = true } },
       },
       signature = {
         enabled = true,
         window = { border = "single" },
-      },
-    },
-  },
-  {
-    "ibhagwan/fzf-lua",
-    opts = {
-      "ivy",
-      fzf_colors = true,
-      fzf_opts = {
-        ["--no-scrollbar"] = true,
-      },
-      winopts = {
-        row = 1,
-        col = 1,
-        width = 1,
-        height = 0.38,
-        backdrop = 100,
-        preview = {
-          hidden = true,
-        },
-        ui_select = function() end,
       },
     },
   },
@@ -153,8 +132,6 @@ return {
           args = {
             "fix",
             "$FILENAME",
-            -- "--config=/your/path/to/config/file/[filename].php",
-            -- "--allow-risky=yes", -- if you have risky stuff in config, if not you dont need it.
           },
           stdin = false,
         },

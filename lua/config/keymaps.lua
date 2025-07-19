@@ -5,8 +5,13 @@
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
+vim.keymap.del("n", "<C-/>")
+vim.keymap.del("t", "<C-/>")
+
+vim.keymap.set("n", "<C-/>", function () vim.cmd("FloatermToggle") end, { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-/>", "<c-\\><c-n>:FloatermToggle<CR>", { noremap = true })
+
 vim.api.nvim_set_keymap("t", "<esc><esc>", "<c-\\><c-n>", { noremap = true })
-vim.api.nvim_set_keymap("i", "<M-CR>", "<c-w>p;", { noremap = true })
 
 vim.api.nvim_set_keymap("t", "<C-w>h", "<c-\\><c-n><C-w>h", { noremap = true })
 vim.api.nvim_set_keymap("t", "<C-w>j", "<c-\\><c-n><C-w>j", { noremap = true })

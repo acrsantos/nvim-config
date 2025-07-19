@@ -3,6 +3,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "andromeda",
+      -- colorscheme = "darkmatter",
       -- colorscheme = "default",
     },
   },
@@ -58,6 +59,11 @@ return {
         },
       })
     end,
+  },
+  {
+    'stevedylandev/darkmatter-nvim',
+    lazy = false,
+    priority = 1000,
   },
   {
     dir = "~/dev/andromeda.nvim/",

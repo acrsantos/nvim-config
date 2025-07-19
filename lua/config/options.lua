@@ -14,7 +14,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 10
 vim.opt.termsync = false
 vim.opt.fillchars = { eob = " " }
-vim.opt.background = "light"
+-- vim.opt.background = "light"
 vim.opt.winborder = "single"
 vim.opt.smartindent = true
 
@@ -23,7 +23,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.linespace = 0
-vim.opt.cmdheight = 0
 
 vim.o.exrc = true
 
